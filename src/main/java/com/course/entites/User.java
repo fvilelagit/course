@@ -29,7 +29,7 @@ public class User implements Serializable{
 	private String password;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "client") // "Um para muitos" mapeador com o nome da varieavel que ta na classe.
+	@OneToMany(mappedBy = "client") 
 	private List<Order> orders = new ArrayList();
 	
 	public User() {
