@@ -45,15 +45,15 @@ public class UserResources {
 	public ResponseEntity<User> insert(@RequestBody User obj){
 		service.insert(obj);
 		//return ResponseEntity.ok().body(obj);
-		URI uri =  ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri(); // Analisar o uso do Location 
+		URI uri =  ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri(); 
 		return ResponseEntity.created(uri).body(obj);
-		//return ResponseEntity.status(HttpStatus.CREATED).body(obj); // PQ NÃO USAR ISSO
+		
 	} 
 	
 	@DeleteMapping(value = "/{id}")
-	public ResponseEntity<Void> delete (@PathVariable Long id){           //Void pq a resposta da requisição não retorna nenhum corpo. 
+	public ResponseEntity<Void> delete (@PathVariable Long id){           
 		service.delete(id);
-		return ResponseEntity.noContent().build();        // Retornar um ResponseEntity vazio 
+		return ResponseEntity.noContent().build();        
 		
 	}
 	
