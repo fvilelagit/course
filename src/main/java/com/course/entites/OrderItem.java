@@ -16,7 +16,7 @@ public class OrderItem implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@EmbeddedId
-	private OrderItemPK id = new OrderItemPK(); //Chave composta tem quem instanciar pra nao dar null pointer no id.set... do construtor
+	private OrderItemPK id = new OrderItemPK(); 
 	
 	private Integer quantity;
 	private Double price;
