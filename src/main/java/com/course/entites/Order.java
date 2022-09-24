@@ -36,10 +36,10 @@ public class Order implements Serializable {
 	private Integer orderStatus;
 	
 	@ManyToOne
-	@JoinColumn(name = "client_id") // nome da chave que estará na coluna. Aquela onda do LAZY.Type
+	@JoinColumn(name = "client_id") 
 	private User client;
 
-	@OneToMany(mappedBy = "id.order") // na chave primaria OrderItemPK id é que tem o atributo order.
+	@OneToMany(mappedBy = "id.order") 
 	private Set<OrderItem> items = new HashSet<>();	
 	
 	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL)  
